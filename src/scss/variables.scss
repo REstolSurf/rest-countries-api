@@ -1,0 +1,22 @@
+:root{
+    /* Colores */
+    --DarkMode-Text :hsl(0, 0%, 100%);
+    --DarkMode-Elements : hsl(209, 23%, 22%);
+    --DarkMode-Background : hsl(207, 26%, 17%);
+
+    --LightMode-Text: hsl(200, 15%, 8%);
+    --LightMode-Input: hsl(0, 0%, 52%);
+    --LightMode-Background: hsl(0, 0%, 98%);
+    --LightMode-Elements: hsl(0, 0%, 100%);
+    
+
+    /* Tipografía */
+    --tipo-principal   : 'Nunito Sans', sans-serif;
+
+    --fontsize-p: 1rem;
+    --fontsize-h1: 4.8rem;
+    --fontsize-h2: 2.8rem;
+    --fontsize-h3: 0.75rem;
+
+  }
+  

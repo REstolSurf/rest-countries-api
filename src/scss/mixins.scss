@@ -1,0 +1,26 @@
+
+@mixin flex($dir,$corte,$just,$align){
+    display: flex; 
+    flex-flow:  $dir $corte;
+    justify-content: $just;
+    align-items: $align;
+}
+
+@mixin tablet($medida: 650px){
+    @media screen and (min-width:$medida){
+       @content;
+    }
+}
+
+@mixin laptop($medida: 960px){
+    @media screen and (min-width:$medida){
+       @content;
+    }
+}
+
+@mixin desktop($medida: 1280px){
+    @media screen and (min-width:$medida){
+       @content;
+    }
+}
+
