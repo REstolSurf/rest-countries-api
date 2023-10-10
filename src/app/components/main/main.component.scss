@@ -1,0 +1,47 @@
+@import "/src/scss/variables.scss","../../../scss/variables.scss";
+
+main{
+    background-color: var(--LightMode-bg);
+}
+.countries {
+    &__container {
+    }
+  }
+  .country {
+    background-color: var(--LightMode-elements);
+margin:2rem;
+    &__content {
+        background-color: red;
+    }
+    &__h3 {
+    }
+    &__img {
+        width:300px;
+    }
+    &__li {
+    }
+    &__span{
+        color: var(--LightMode-input);
+
+    }
+  }
+  .region {
+    &__option {
+
+    }
+  }
+  .search {
+    &__btn {
+        background-color: var(--LightMode-elements);
+    }
+    &__div {
+    }
+    &__input {
+        color: var(--LightMode-input);
+    }
+    &__region {
+    }
+    &__svg {
+    }
+  }
+  

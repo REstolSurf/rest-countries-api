@@ -1,0 +1,14 @@
+@import "/src/scss/variables.scss","/src/scss/mixins.scss";
+
+.header {
+    background-color: var(--LightMode-elements);
+    &__btn {
+    }
+    &__div {
+    }
+    &__h1 {
+        color: var(--LightMode-txt);
+    }
+    &__svg {
+    }
+  }

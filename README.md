@@ -25,6 +25,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 
 
+
 ### The challenge
 
 Users should be able to:
@@ -42,7 +43,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub Repo](https://github.com/REstolSurf/ip-address-tracker-master)
+- Solution URL: [GitHub Repo](https://github.com/REstolSurf/rest-countries-api)
 - Live Site URL: [GitHub Pages](https://restolsurf.github.io/ip-address-tracker-master/)
 
 ### Built with

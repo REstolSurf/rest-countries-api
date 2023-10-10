@@ -1,0 +1,35 @@
+<main>
+<nav class="search">
+    <div class="search__div">
+        <div class="search__svg"></div>
+        <label for="searchByCountry"></label>
+        <input title="search"type="text" name="searchByCountry" id="searchByCountry" class="search__input" placeholder="Search for a country..." aria-label="Search for country">
+    </div>
+    <div class="search__div">
+        <button class="search__btn" (click)="showRegions = !showRegions">
+            Filter by Region
+        </button>
+        
+        <div *ngIf="showRegions" class="search__region">
+            <div *ngFor="let region of regions" (click)="filterByRegion(region)" class="region__option">
+                {{ region }}
+            </div>
+        </div>
+    </div>
+</nav>
+<section class="countries">
+    <div *ngIf="showCountries" class="countries__container">
+        <div *ngFor="let country of countries" class="country" (click)="filterByCountry(country.name)">
+            <img [src]="country.flag" alt="" class="country__img">
+            <div class="country__content">
+                <h3 class="country__h3">{{country.name}}</h3>
+                <ul>
+                    <li class="country__li">Population: <span class="country__span">{{country.population}}</span></li>
+                    <li class="country__li">Region: <span class="country__span">{{country.region}}</span></li>
+                    <li class="country__li">Capital: <span class="country__span">{{country.capital}}</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+</main>

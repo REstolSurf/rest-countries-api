@@ -1,14 +1,14 @@
 :root{
     /* Colores */
-    --DarkMode-Text :hsl(0, 0%, 100%);
-    --DarkMode-Elements : hsl(209, 23%, 22%);
-    --DarkMode-Background : hsl(207, 26%, 17%);
+    --DarkMode-txt :hsl(0, 0%, 100%);
+    --DarkMode-elements : hsl(209, 23%, 22%);
+    --DarkMode-bg : hsl(207, 26%, 17%);
 
-    --LightMode-Text: hsl(200, 15%, 8%);
-    --LightMode-Input: hsl(0, 0%, 52%);
-    --LightMode-Background: hsl(0, 0%, 98%);
-    --LightMode-Elements: hsl(0, 0%, 100%);
-    
+    --LightMode-txt: hsl(200, 15%, 8%);
+    --LightMode-input: hsl(0, 0%, 52%);
+    --LightMode-bg: hsl(0, 0%, 98%);
+    --LightMode-elements: hsl(0, 0%, 100%);
+  
 
     /* Tipografía */
     --tipo-principal   : 'Nunito Sans', sans-serif;
