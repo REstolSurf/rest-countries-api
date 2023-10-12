@@ -1,40 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Country } from 'src/app/classes/country';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
-showRegions :boolean = false;
-showCountries :boolean = true;
+  showRegions: boolean = false;
+  showCountries: boolean = true;
 
-regions : string[]= [];
-countries: any[] = [
-  {
-    name: 'Country 1',
-    population: 1000000,
-    region: 'Region 1',
-    capital: 'Capital 1',
-    flag: 'https://flagcdn.com/al.svg'
-  },
-  {
-    name: 'Country 2',
-    population: 2000000,
-    region: 'Region 2',
-    capital: 'Capital 2',
-    flag: 'https://flagcdn.com/ax.svg'
-  },
-  // Agrega más objetos country según tus necesidades
-];
+  regions: string[] = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
+  countries: Country[] = [];
+  countriesToShow: Country[] = [];
 
-  
-filterByRegion(region: string) {
+  @Output() countrySelected = new EventEmitter<string>();
+
+  constructor(private apiService: ApiService) {}
+
+  ngOnInit() {
+    this.apiService.getCountries().subscribe((data: Country[]) => {
+      this.countries = data;
+      this.countriesToShow = this.countries;
+    });
+  }
+
+  filterByRegion(region: string) {
+    this.showRegions = false;
+    this.countriesToShow = this.countries.filter(
+      (country) => country.region === region
+    );
+  }
+
+  filterByName(event: KeyboardEvent) {
+    const countryName: string = (event.target as HTMLInputElement).value;
+
+    this.countriesToShow = this.countries.filter((country) =>
+      country.name.toLowerCase().includes(countryName.trim().toLowerCase())
+    );
+  }
+
+  onCountrySelected(countryName: string) {
+    this.countrySelected.emit(countryName);
+  }
 }
-
-filterByCountry(countryName: string){
-  
-
-}
-}
-

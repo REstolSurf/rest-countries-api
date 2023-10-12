@@ -1,2 +1,3 @@
 <app-header></app-header>
-<app-main></app-main>
+<app-main (countrySelected)="onCountrySelected($event)" *ngIf="!showCountryDetail"></app-main>
+<app-detail *ngIf="showCountryDetail" [selectedCountry]="selectedCountry" (backToMain)="onBackToMain()"></app-detail>

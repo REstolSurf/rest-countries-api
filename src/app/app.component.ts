@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'rest-countries-api';
+  showCountryDetail : boolean = false;
+  selectedCountry : string = '';
+
+  onCountrySelected(countryName: string){
+    this.showCountryDetail = true;
+    this.selectedCountry = countryName;
+  }
+
+  onBackToMain(){ this.showCountryDetail = false };
 }
