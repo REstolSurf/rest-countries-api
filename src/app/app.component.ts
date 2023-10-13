@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'rest-countries-api';
   showCountryDetail : boolean = false;
   selectedCountry : string = '';
-
+ 
   onCountrySelected(countryName: string){
     this.showCountryDetail = true;
     this.selectedCountry = countryName;

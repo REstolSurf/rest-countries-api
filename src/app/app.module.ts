@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { DetailComponent } from './components/detail/detail.component';
+import { FormatNumWithCommasPipe } from './pipes/format-num-with-commas.pipe';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { DetailComponent } from './components/detail/detail.component';
     HeaderComponent,
     MainComponent,
     DetailComponent,
+    FormatNumWithCommasPipe,
   ],
   imports: [
     HttpClientModule,

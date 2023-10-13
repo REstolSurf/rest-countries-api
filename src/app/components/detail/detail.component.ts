@@ -11,7 +11,7 @@ export class DetailComponent {
   country : CountryDetail[] = [];
   @Output() backToMain = new EventEmitter<void>();
   @Input() selectedCountry: string = '';
-
+  
   constructor(private apiService : ApiService){}
   ngOnInit() {
     if(this.selectedCountry){

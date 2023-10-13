@@ -1,14 +1,23 @@
 @import "/src/scss/variables.scss","/src/scss/mixins.scss";
 
 .header {
-    background-color: var(--LightMode-elements);
-    &__btn {
+    @include flex(row, nowrap, space-between,center);
+    padding: 1.5rem 1rem;
+    background-color: var(--elements-color);
+     
+     &__btn {
+        @include flex(row, nowrap, center,center);
+        font-size: 0.75rem;
+        white-space: nowrap;
+        gap:0.5rem;
     }
     &__div {
     }
     &__h1 {
-        color: var(--LightMode-txt);
+        color: var(--text-color);
+        font-weight: 700;
     }
     &__svg {
+        
     }
   }

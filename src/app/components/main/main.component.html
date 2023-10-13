@@ -1,21 +1,28 @@
 <main>
 <nav class="search">
     <div class="search__div">
-        <div class="search__svg"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="search__svg" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
         <label for="searchByCountry"></label>
-        <input title="search"type="text" name="searchByCountry" id="searchByCountry" class="search__input" placeholder="Search for a country..." aria-label="Search for country" (keyup)="filterByName($event)">
+        <input  class="search__input" title="search"type="text" name="searchByCountry" id="searchByCountry" class="search__input" placeholder="Search for a country..." aria-label="Search for country" (keyup)="filterByName($event)">
     </div>
-    <div class="search__div">
+    <div class="fixed">
+    <div class="search__div region">
         <button class="search__btn" (click)="showRegions = !showRegions">
             Filter by Region
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="search__svg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+              </svg>
         </button>
         
-        <div *ngIf="showRegions" class="search__region">
-            <div *ngFor="let region of regions" (click)="filterByRegion(region)" class="region__option">
-                {{ region }}
-            </div>
+    </div>
+    <div *ngIf="showRegions" class="search__div region regions">
+        <div *ngFor="let region of regions" (click)="filterByRegion(region)" class="region__option">
+            {{ region }}
         </div>
     </div>
+</div>
 </nav>
 <section class="countries">
     <div *ngIf="showCountries" class="countries__container">
@@ -23,8 +30,8 @@
             <img [src]="country.flag" alt="" class="country__img">
             <div class="country__content">
                 <h3 class="country__h3">{{country.name}}</h3>
-                <ul>
-                    <li class="country__li">Population: <span class="country__span">{{country.population}}</span></li>
+                <ul class="country__ul">
+                    <li class="country__li">Population: <span class="country__span">{{country.population | formatNumWithCommas}}</span></li>
                     <li class="country__li">Region: <span class="country__span">{{country.region}}</span></li>
                     <li class="country__li">Capital: <span class="country__span">{{country.capital}}</span></li>
                 </ul>

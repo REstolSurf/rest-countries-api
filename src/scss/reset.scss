@@ -69,8 +69,8 @@ blockquote:before, blockquote:after, q:before, q:after {
 
 /* (Opcional) Configuramos el texto que seleccionamos */
 ::selection {
-  background-color: var(--LightMode-bg);
-  color: var(--LightMode-txt);
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 /* Nivelamos problemas de tipografías y colocación de formularios */
@@ -102,8 +102,8 @@ body {
   min-height  : 100dvh;
   font-size   : 100%;
   font-family : var(--tipo-principal);
-  color       : var(--LightMode-txt);
-  background-color: var(--LightMode-bg);
+  color       : var(--text-color);
+  background-color: var(--bg-color);
   /* (Opcional) */ hyphens: none;
   /* (Opcional) */ font-smooth: always;
   /* (Opcional) */ -webkit-font-smoothing: antialiased;
