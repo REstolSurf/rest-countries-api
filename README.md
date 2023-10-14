@@ -44,7 +44,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub Repo](https://github.com/REstolSurf/rest-countries-api)
-- Live Site URL: [GitHub Pages](https://restolsurf.github.io/ip-address-tracker-master/)
+- Live Site URL: [GitHub Pages](https://restolsurf.github.io/rest-countries-api/)
 
 ### Built with
 

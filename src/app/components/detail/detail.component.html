@@ -1,16 +1,77 @@
-<p>detail works!</p>
-<button (click)="onBackToMain()">BACK</button>
-<div *ngFor="let countryDetail of country">
-    {{countryDetail.name }}
-    {{countryDetail.capital}}
-    {{countryDetail.region}}
-    {{countryDetail.population}}
-    {{countryDetail.flag }}
-    {{countryDetail.topLevelDomain }}
-    {{countryDetail.subregion}}
-    {{countryDetail.borders}}
-    {{countryDetail.nativeName}}
-    {{countryDetail.currencies}}
-    {{countryDetail.languages}}
 
+<section class="data">
+  <button
+  (click)="onBackToMain()"
+  title="Back to main"
+  aria-label="back to the main page"
+  class="data__btn"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    class="data__svg"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+    />
+  </svg>
+  Back
+</button>
+<div *ngFor="let countryDetail of country">
+  <div class="data__container">
+    <img [src]="countryDetail.flag" alt="country flag" class="data__img" />
+    <div class="data__content">
+      <h2 class="data__h2">{{ countryDetail.name }}</h2>
+      <div class="data__div">
+      <ul class="data__ul">
+        <li class="data__li">
+          Native Name:
+          <span class="data__span">{{ countryDetail.nativeName }} </span>
+        </li>
+        <li class="data__li">
+          Population:
+          <span class="data__span">{{ countryDetail.population | formatNumWithCommas }} </span>
+        </li>
+        <li class="data__li">
+          Region: <span class="data__span">{{ countryDetail.region }} </span>
+        </li>
+        <li class="data__li">
+          Sub Region:
+          <span class="data__span">{{ countryDetail.subregion }} </span>
+        </li>
+        <li class="data__li">
+          Capital: <span class="data__span">{{ countryDetail.capital }} </span>
+        </li>
+      </ul>
+      <ul class="data__ul">
+        <li class="data__li">
+          Top Level Domain:
+          <span class="data__span">{{ countryDetail.topLevelDomain }} </span>
+        </li>
+        <li class="data__li">
+          Currencies:
+          <span class="data__span">{{ countryDetail.currencies }} </span>
+        </li>
+        <li class="data__li">
+          Languages:
+          <span class="data__span">{{ countryDetail.languages }} </span>
+        </li>
+      </ul>
+    </div>
+      <div class="data__div">
+        <h3 class="data__h3">Border Countries:</h3>
+        <div class="data__borders">
+        <div class="data__border" *ngFor="let countryBorder of countryBordersNames">
+          <button class="data__btn regions" (click)="getCountryBorderDetail(countryBorder)">{{countryBorder}}</button
+          >
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
 </div>
+</section>

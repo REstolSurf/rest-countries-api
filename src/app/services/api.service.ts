@@ -44,7 +44,6 @@ getCountryDetail(country : string): Observable<CountryDetail[]>{
         countryDetail.topLevelDomain = countryData.tld;
         countryDetail.subregion = countryData.subregion;
         countryDetail.borders = countryData.borders;
-
         for (const key in countryData.name.nativeName) {
           if (countryData.name.nativeName.hasOwnProperty(key)) {
             countryDetail.nativeName.push(countryData.name.nativeName[key].common);
@@ -66,4 +65,15 @@ getCountryDetail(country : string): Observable<CountryDetail[]>{
     })
     );
 }
+
+getCountriesNamesFromCodes(codes: string[]): Observable<string[]> {
+  return this.http.get<string[]>(`${this.apiUrl}/alpha?codes=${codes}`).pipe(
+    map((data: any[]) => {
+      const countryNames = data.map((countryData) => countryData.name.common);
+      return countryNames;
+    })
+  );
 }
+
+}
+ 

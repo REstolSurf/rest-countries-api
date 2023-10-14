@@ -1,0 +1,93 @@
+@import "/src/scss/variables.scss","/src/scss/mixins.scss";
+ 
+.data {
+    max-width: 1200px;
+    margin: 0 auto;
+    &__btn {
+        @include shadow();
+        @include flex(row, nowrap, center, center);
+        border-radius: 0.25em;
+        margin:2em 1.5em;
+        padding:0.5em 1.5em;
+        font-weight: 300;
+        &.regions{
+            margin:0 0.125em;
+            padding: 0.125em 1.25em;
+            font-size: 0.9rem;
+        }
+    }
+    &__svg{
+        margin-right:0.5em;
+    }
+  &__container {
+    margin: 2em 1.5em;
+    min-width:10em;
+    @include tablet(){    
+        @include flex(row,nowrap,space-between,center);
+        gap:2em;
+
+    };
+
+  }
+  &__div {
+    margin-top:2em;
+  }
+  &__h2 {
+
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  &__content{
+    @include tablet(){    
+      width:50%;
+  };    
+  }
+  &__h3 {
+
+    font-size: 1rem;
+  }
+  &__img {
+    width:100%;
+    max-width: 28em;
+    max-height: 16em;
+    min-height:7.5em;
+    margin: 2.5em 0;
+    @include tablet(){    
+        width:40%;
+        min-height: 16em;
+    };
+  }
+  &__li {
+    font-size: 0.9rem;
+    margin-bottom:0.75em;
+  }
+  &__span {
+    font-weight: 300;
+  }
+  &__ul {
+    margin-top:2em;
+    @include tablet(){
+        margin-top:0;
+    }
+  }
+  &__div{
+    @include tablet(){
+        @include flex(row,nowrap,left, flex-start);
+        gap:1em;
+    }
+  }
+  &__borders{
+    @include flex(row,wrap,left, center);
+    max-width: 20em;
+    gap: 0.5em;
+}
+
+  &__border{
+    font-size: 0.9rem;
+    margin-top:2em ;
+    @include tablet(){
+        margin-top:0;
+    }
+
+  }
+}
